@@ -1,0 +1,35 @@
+<ion-content>
+<ion-row class="toprow">
+    <ion-col col-3>
+        <ion-icon class="arrow" (click)="back()" name="ios-arrow-round-back-outline"></ion-icon>
+    </ion-col>
+    <ion-col col-6>
+      <p id="pardiv">{{'Settings'|translate}}</p>
+    </ion-col>
+    <ion-col col-3 class="set" >
+       
+      </ion-col>
+  </ion-row>
+  <p class="firstpar">{{customer.firstname}}  {{customer.lastname}}</p>
+  <p class="secpar">{{customer.email}}</p>
+
+  <div class="contdiv" (click)="goedit()">
+    <img src="assets/imgs/icProfile.png">
+    <p> {{'Edit Profile'|translate}}</p>
+    <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+  </div>
+  <div class="contdiv">
+      <img src="assets/imgs/icProfileLang.png">
+      <p> {{'Language'|translate}}</p>
+      <ion-select [(ngModel)]="lang" (ionChange)="checLang(lang)">
+          <ion-option  value="English">English</ion-option>
+          <ion-option value="Arabic">Arabic</ion-option>
+      </ion-select>
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+  </div>
+  <div class="contdiv" (click)="logOut()">
+      <img src="assets/imgs/icProfileLogout.png">
+      <p> {{'Logout'|translate}}</p>
+     
+  </div>
+</ion-content>

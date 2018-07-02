@@ -1,0 +1,82 @@
+page-editaccount {
+    .arrow{
+        font-size: 40px;
+        position: fixed;
+        top: 7px;
+ } 
+ .set{
+    text-align: end;
+    font-size: 18px;
+    padding-top: 8px;
+    padding-right: 10px;
+    padding: 8px 10px 0;
+ }  
+    .toprow{
+        padding: 10px 10px 0 20px;
+        background-color: #a947a9;
+        height: 60px;
+        color:white;
+
+        #pardiv{
+            text-align: center;
+            margin: 2px;
+            font-size: 25px;
+        }
+
+
+    }
+    .formclass{
+        margin:100px auto 0;
+        width: 80%;
+    }
+    .item{
+        padding: 0;
+        border: 1px solid lightgray;
+        margin: 0 0 10px;
+        height: 50px;
+        border-radius: 40px;
+        display: flex;
+        img {
+            margin: 15px 10px;
+            display: none
+        }
+        .item-inner {
+          padding: 0 !important;
+        }
+    }
+    .forget{
+        text-align: center;
+        color: gray;
+        margin-top: 25px;
+    }
+    .sign{
+        border-radius: 40px;
+        height: 55px;
+        font-size: 25px;
+        background-color: #a947a9;
+        text-transform: none;
+       
+        span{
+            color: white !important;
+        }
+    }
+    .text-input {
+        margin: 10px;
+        font-size: 22px;
+       
+    }
+    .button.activated {
+        background-color: #a947a9;
+    }
+    .text-input.ng-invalid {
+        background-color: pink;
+    }
+    .validation{
+        width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: red;
+    margin: -5px 0 0 0;
+ }
+
+}

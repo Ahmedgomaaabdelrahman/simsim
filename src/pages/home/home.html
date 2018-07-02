@@ -1,14 +1,94 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content>
+<ion-row class="toprow">
+  <ion-col col-3>
+      <!-- <ion-icon class="arrow" (click)="back()" name="ios-arrow-round-back-outline"></ion-icon> -->
+  </ion-col>
+  <ion-col col-6>
+   <p id="pardiv">{{'Statistics'|translate}}</p>
+  </ion-col>
+  <ion-col col-3 class="set" (click)="setting()">
+      <ion-icon name="md-settings"></ion-icon>
+    </ion-col>
+</ion-row>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<div class="segdiv">
+    <ion-segment style="height: 100%;" [(ngModel)]="icons">
+        <ion-segment-button value="products">
+          {{'Products'|translate}}  
+        </ion-segment-button>
+        <ion-segment-button value="earn">
+          {{'Earnings'|translate}}  
+        </ion-segment-button>
+      </ion-segment>
+</div>
+
+<div [ngSwitch]="icons">
+
+  <div class="contdiv" *ngSwitchCase="'products'">
+    <div class="chartdiv"><img src="assets/imgs/chart.png"></div>
+    <ion-row>
+      <ion-col col-6>
+        <div class="maindiv">
+          <p>{{product_owned}}</p>
+          <p>{{'Products owned'|translate}} </p>
+        </div>
+      </ion-col>
+      <ion-col col-6>
+          <div class="maindiv">
+            <p>{{product_sold}}</p>
+            <p>{{'Products sold'|translate}} </p>
+          </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+          <div class="maindiv">
+            <p>{{saved_fav}}</p>
+            <p>{{'Saved as favorites'|translate}} </p>
+          </div>
+        </ion-col>
+        <ion-col col-6>
+            <div class="maindiv">
+              <p>{{product_return}}</p>
+              <p>{{'Products returned'|translate}} </p>
+            </div>
+          </ion-col>
+      </ion-row>
+</div>
+      
+      <div class="contdiv" *ngSwitchCase="'earn'">
+          <div class="chartdiv"><img src="assets/imgs/chart.png"></div>
+          <ion-row>
+            <ion-col col-6>
+              <div class="maindiv">
+                <p>{{money_earn}} <span>{{'SAR'|translate}}</span></p>
+                <p>{{'Money Earn'|translate}} </p>
+              </div>
+            </ion-col>
+            <ion-col col-6>
+                <div class="maindiv">
+                  <p>{{money_simsim}} <span>{{'SAR'|translate}}</span></p>
+                  <p>{{'Money for Simsim'|translate}} </p>
+                </div>
+              </ion-col>
+          </ion-row>
+        
+          <ion-row>
+              <ion-col col-6>
+                <div class="maindiv">
+                  <p>{{cash_money}} <span>{{'SAR'|translate}}</span></p>
+                  <p>{{'Cash Money'|translate}} </p>
+                </div>
+              </ion-col>
+              <ion-col col-6>
+                  <div class="maindiv">
+                    <p>{{earn_credit}} <span>{{'SAR'|translate}}</span></p>
+                    <p>{{'earn via credit'|translate}} </p>
+                  </div>
+                </ion-col>
+            </ion-row>
+      </div>
+</div>
+
+
 </ion-content>

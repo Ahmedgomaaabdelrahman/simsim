@@ -1,0 +1,63 @@
+<ion-content>
+  <ion-row class="toprow">
+    <ion-col col-3>
+        <ion-icon class="arrow" (click)="back()" name="ios-arrow-round-back-outline"></ion-icon>
+    </ion-col>
+    <ion-col col-6>
+      <p id="pardiv">{{'Edit Profile'|translate}}</p>
+    </ion-col>
+    <ion-col col-3 class="set" >
+       
+    </ion-col>
+  </ion-row>
+
+  <div class="formclass">
+    <form #f="ngForm"  (ngSubmit)="updateUser(f.value)">
+      <div class="item">
+        <img src="assets/imgs/person.png" height="15px">
+        <ion-input (blur)="sx1()" #firstname [ngModel]="customer.firstname" name="firstname" placeholder="{{'First name' | translate}}" type="text" required></ion-input>
+      </div> 
+
+      <p [style.display]="displayvalidation1" class="validation" *ngIf="!firstname.value">{{'Plaese enter your first name'|translate}}</p>
+
+      <div class="item" >
+        <img src="assets/imgs/lock.png" height="18px">
+        <ion-input (blur)="sx2()"  #lastname  [ngModel]="customer.lastname" name="lastname" placeholder="{{'Last name'|translate}}" type="text" required></ion-input>
+      </div>
+      <p [style.display]="displayvalidation2" class="validation" *ngIf="!lastname.value">{{'Plaese enter your last name'|translate}}</p>
+
+
+      <div class="item" >
+        <img src="assets/imgs/lock.png" height="18px">
+        <ion-input (blur)="sx3()" #phone [ngModel]="customer.phone" name="phone" placeholder="{{'Phone'|translate}}" type="number" required></ion-input>
+      </div>
+      <p [style.display]="displayvalidation3" class="validation" *ngIf="!phone.value">{{'Plaese enter your phone'|translate}}</p>
+
+
+      <div class="item" >
+        <img src="assets/imgs/lock.png" height="18px">
+        <ion-input (blur)="sx4()" #email [ngModel]="customer.email" name="email" placeholder="{{'Email'|translate}}" type="email" readonly required></ion-input>
+      </div>
+      <p [style.display]="displayvalidation4" class="validation" *ngIf="!email.value">{{'Plaese enter your email'|translate}}</p>
+
+
+      <div class="item" >
+        <img src="assets/imgs/lock.png" height="18px">
+        <ion-input (blur)="sx5()" #CurrentPassword ngModel  placeholder="{{'Current Password'|translate}}" name="Password" type="password"required></ion-input>
+      </div>
+
+
+      <div class="item" >
+        <img src="assets/imgs/lock.png" height="18px">
+        <ion-input (focus)="sx5()" (blur)="sx6()" #NewPassword ngModel placeholder="{{'New Password'|translate}}" name="newpass" type="password" required></ion-input>
+      </div>
+      <p [style.display]="displayvalidation6" class="validation" *ngIf="!NewPassword.value">{{'Plaese enter your New Password'|translate}}</p>
+      <p [style.display]="displayvalidation5" class="validation" *ngIf="!CurrentPassword.value">{{'Plaese enter your Current Password to Update password'|translate}}</p>
+
+      <button [disabled]="!phone.value || !lastname.value || !firstname.value"  ion-button block class="sign">{{'UPDATE'|translate}}</button>
+  
+      <!-- <p class="forget">Forget Password ?</p> -->
+    </form>
+  </div>
+
+</ion-content>

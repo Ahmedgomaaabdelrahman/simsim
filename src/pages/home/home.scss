@@ -1,3 +1,86 @@
 page-home {
+    .arrow{
+        font-size: 40px;
+        position: fixed;
+        top: 7px;
+ } 
 
+ .set{
+    text-align: end;
+    font-size: 21px;
+    padding-top: 8px;
+    padding-right: 10px;
+    padding: 8px 10px 0;
+ }  
+    .toprow{
+        padding: 10px 10px 0 20px;
+        background-color: #a947a9;
+        height: 60px;
+        color:white;
+
+        #pardiv{
+            text-align: center;
+            margin: 2px;
+            font-size: 22px;
+        }
+
+
+    }
+
+    .segdiv{
+        padding: 0 15%;
+        height: 60px;
+        background-color: #e8e8e8;
+        .segment-button{
+            font-size: 22px;
+            text-transform: none;
+            color: #777575;
+            border-bottom: none;
+            padding-bottom: 35px;
+
+        }
+        .segment-ios .segment-button{
+            border:none;
+        }
+        .segment-button.segment-activated  , .segment-ios .segment-button.segment-activated{
+            border-bottom: 4px solid orange;
+            background: transparent;
+            color: #777575;
+            padding-top: 15px;
+            height: 100%;
+
+        }
+    }
+
+    .chartdiv {
+        margin:7px 7px 20px 7px;;
+    }
+    .contdiv{
+        padding:20px;
+        div{
+            box-shadow: 0px 3px 10px -2px #a7a3a3;
+        }
+        .col{padding: 0}
+    }
+    .maindiv{
+        padding-top:10px;
+        margin: 7px;
+        text-align: center;
+        border-radius: 10px;
+        height: 100px;
+        
+        p:first-of-type{
+          font-size: 27px;
+          margin: 5px;
+          span{
+              font-size: 18px;
+          }
+        }
+        p:last-of-type {
+            color:#f5ab24;
+            margin: 0;
+            font-size:14px;
+        }
+
+    }
 }
